@@ -4,8 +4,8 @@ import {FaShoppingBasket} from "react-icons/fa";
 function NavBar() {
   return (
   <div className="w-screen border flex items-center h-20 justify-around" >
-    <div className=" w-80 flex justify-around">
-    <span>Home</span>
+    <div className=" w-80 flex justify-around font-robo font-medium">
+    <span className=" ">Home</span>
     <span>Products</span>
     <span>About us</span>
     <span>Contact</span>
