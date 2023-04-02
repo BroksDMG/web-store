@@ -67,10 +67,8 @@ function ProductsContainer() {
         <h1>Kategorie</h1>
         <h1>sortuj</h1>
         </div>
-        <div>
-        {products.map(product=>{
-            <ProductCard items={product}/>
-        })}
+        <div className='flex flex-wrap'>
+        {products.map((product,index)=><ProductCard items={product} key={index}></ProductCard>)}
         </div>
     </div>
   )

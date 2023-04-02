@@ -1,7 +1,7 @@
 import React from "react";
 import { FaShoppingBasket } from "react-icons/fa";
 function ProductCard(props) {
-    console.log(props.data);
+    console.log(props.items);
 
     console.log("sad");
   return (
@@ -9,18 +9,18 @@ function ProductCard(props) {
       <div>
         <img
           className="rounded-t-lg"
-          src="https://dabexbydgoszcz.pl/wp-content/uploads/2022/04/septa-green-1l.webp"
+          src={props.items.img}
           alt="product"
         />
       </div>
       <div className=" font-robo font-bold tracking-wider p-3 relative">
-        <h1 className="text-sm ">Nike Dunk Force</h1>
+        <h1 className="text-sm ">{props.items.title}</h1>
         <div className="text-center text-xs text-gray-400 font-semibold">
-          Odnawia, nabszcza i chroni plastiki
+          {props.items.description}
         </div>
         <div className="flex justify-between relative">
           <div className="flex items-end  mt-5">
-            <p className="text-gray-400 text-sm  line-through  ">$20,00</p>
+            <p className="text-gray-400 text-sm  line-through  ">{props.items.price}zł</p>
             <p className=" absolute left-7 bottom-2 text-red-400 transform rotate-12 ">$15,00</p>
           </div>
           <div className="flex items-end">
