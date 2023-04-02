@@ -69,9 +69,8 @@ function ProductsContainer() {
         </div>
         <div>
         {products.map(product=>{
-            <ProductCard data={product}></ProductCard>
+            <ProductCard items={product}/>
         })}
-        <ProductCard/>
         </div>
     </div>
   )

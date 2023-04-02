@@ -1,7 +1,9 @@
 import React from "react";
 import { FaShoppingBasket } from "react-icons/fa";
 function ProductCard(props) {
-    console.log(props.data[1]);
+    console.log(props.data);
+
+    console.log("sad");
   return (
     <div className=" w-56 rounded-lg bg-gray-100 shadow-lg m-3 border">
       <div>
