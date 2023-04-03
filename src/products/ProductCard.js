@@ -1,19 +1,16 @@
 import React from "react";
 import { FaShoppingBasket } from "react-icons/fa";
 function ProductCard(props) {
-    console.log(props.items);
-
-    console.log("sad");
   return (
-    <div className=" w-56 rounded-lg bg-gray-100 shadow-lg m-3 border">
-      <div>
+    <div className=" w-40 rounded-lg  shadow-lg m-3 border">
+      <div className="bg-white p-3 rounded-xl">
         <img
-          className="rounded-t-lg"
+          className="rounded-t-lg w-screen h-50"
           src={props.items.img}
           alt="product"
         />
       </div>
-      <div className=" font-robo font-bold tracking-wider p-3 relative">
+      <div className="h-32 font-robo font-bold tracking-wider p-3 relative flex flex-col justify-between rounded-b-lg bg-gray-100">
         <h1 className="text-sm ">{props.items.title}</h1>
         <div className="text-center text-xs text-gray-400 font-semibold">
           {props.items.description}
