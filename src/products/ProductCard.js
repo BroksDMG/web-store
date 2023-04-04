@@ -2,7 +2,7 @@ import React from "react";
 import { FaShoppingBasket } from "react-icons/fa";
 function ProductCard(props) {
   return (
-    <div className=" w-40 rounded-lg  shadow-lg m-3 border">
+    <div className="min-w-[9rem] max-w-[] w rounded-lg  shadow-lg m-2 border">
       <div className="bg-white p-3 rounded-xl">
         <img
           className="rounded-t-lg w-screen h-50"

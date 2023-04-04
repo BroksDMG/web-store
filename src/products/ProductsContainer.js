@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import ProductFilter from './ProductFilter'
 function ProductsContainer() {
     const products=[
     {
@@ -14,7 +15,7 @@ function ProductsContainer() {
         title:"Miedź Spray 400 ML",
         description:"Wysokotemperaturowy, szybkoschnący smar miedziowy",
         price:30.33,
-        img:'https://k2.com.pl/wp-content/plugins/sscatalog/cache/images/200x200/93459173777c54a0fbf49e26ede12c10.jpg'
+        img:'https://k2.com.pl/wp-content/plugins/sscatalog/cache/images/822x822/93459173777c54a0fbf49e26ede12c10.jpg'
 
     },
     {
@@ -66,7 +67,7 @@ function ProductsContainer() {
         <h1>Happy shopping 🤗</h1>
         <div className='flex justify-between'>
         <h1>Kategorie</h1>
-        <h1>sortuj</h1>
+        <ProductFilter/>
         </div>
         <div className='flex flex-wrap'>
         {products.map((product,index)=><ProductCard items={product} key={index}></ProductCard>)}
