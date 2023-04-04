@@ -1,20 +1,41 @@
 import React from "react";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { Slider,} from "@mui/material";
+import {Slider,styled} from "@mui/material";
+
+const CustomSlider = styled(Slider)({
+    width: '100%',
+    height: '20px',
+    '& .MuiSlider-track': {
+      borderRadius: '999px',
+    },
+    
+    '& .MuiSlider-thumb': {
+        width: "17px",
+        height: "17px",
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(59 130 246 / var(--tw-bg-opacity))",
+        borderRadius: "50%",
+        border: "none",
+        cursor: "pointer",
+        pointerEvents: "auto",
+        "-webkit-appearance": "none",
+      '&:focus, &:hover': {
+        boxShadow: 'inherit',
+      },
+    },
+  });
+
 function ProductFilter() {
 const [clicked, setClicked] = useState(false);
-const[ranges, setRanges]=useState([30,700]);
+const[ranges, setRanges]=useState([3060,7000]);
 const handleFilterClick = () => {
     setClicked(!clicked);
   };
-    const handleRangeInput=(e,data)=>{
-        setRanges(data)
-    }
-    const handleRangeInputField=(e,data)=>{
-        const val =e.target.value;
-        if(val === typeof Number) console.log("git");
-    }
+    const handleRangeInput=(e,data)=>setRanges(data)
+    const handleRangeMinInputField=(e)=>setRanges([e.target.value,ranges[1]])
+    const handleRangeMaxInputField=(e)=>setRanges([ranges[0],e.target.value]);
+    
   return (
     <div className="mx-2 flex ">
       <button
@@ -45,7 +66,7 @@ const handleFilterClick = () => {
             <div className="w-full hover:bg-gray-300 px-4">
             <button className="border-b w-full h-14 flex items-center justify-start rounded-sm p-2 hover:border-none  hover:font-bold  ">Największy rabat</button>
             </div>
-            <div className="px-6">
+            <div className="px-6 w-full">
                 <div className="mt-4">
                     <h1 className="font-semibold text-xl">Przedział cenowy</h1>
                     {/* <p className=" text-sm">Użyj suwaka lub wpisz minimalną i maksymalną cenę</p> */}
@@ -53,18 +74,18 @@ const handleFilterClick = () => {
                 <div className="flex my-3">
                     <div className="flex items-center">
                         <p>Min</p>
-                        <input type="text"  onChange={handleRangeInputField}
+                        <input type="Number" value={ranges[0]} onChange={handleRangeMinInputField}
                         className="border rounded-lg px-2 w-20 ml-2 " />
                     </div>
                     <div className="mx-2">-</div>
                     <div className="flex items-center">
                         <p>Max</p>
-                        <input type="number" value={ranges[1]} onChange={handleRangeInputField}
+                        <input type="Number" value={ranges[1]}  onChange={handleRangeMaxInputField}
                         className="border rounded-lg px-2 w-20 mx-2" />
                     </div>
                 </div>
-                <div>
-                    <Slider 
+                <div className="w-full">
+                    <CustomSlider 
                     max={10000}
                     value={ranges}
                     onChange={handleRangeInput}
@@ -74,12 +95,12 @@ const handleFilterClick = () => {
                     <div className=" h-2 left-1/4 right-1/4 absolute rounded-lg bg-blue-500"></div>
                 </div>
                 <div className=" p-3 relative">
-                    <input onChange={handleFilterClick} type="range" min={0} max={1000} value={rangeValue}
+                    <input onChange={handleRangeInput} type="range"  max={1000} value={30}
                     className=" thun appearance-none non h-2 bg-transparent rounded-lg pointer-events-auto absolute left-0 -top-[8px] thumb "/>
                      <input type="range" min='0' max='10000' value='7500'
                     className=""/> 
-                </div>
-                 */}
+                </div> */}
+                
             </div>
         </div>
       </div>
