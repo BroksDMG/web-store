@@ -83,15 +83,17 @@ const handleFilterClick = () => {
                 </div>
                 <div className="flex my-3 justify-center">
                     <div className="flex items-center">
-                        <p>Min</p>
+                        <p>Od</p>
                         <input type="Number" value={ranges[0]} onChange={handleRangeMinInputField}
                         className="border rounded-lg px-2 w-20 ml-2 " />
+                        <p>zł</p>
                     </div>
                     <div className="mx-2">-</div>
                     <div className="flex items-center">
-                        <p>Max</p>
+                        <p>Do</p>
                         <input type="Number" value={ranges[1]}  onChange={handleRangeMaxInputField}
-                        className="border rounded-lg px-2 w-20 mx-2" />
+                        className="border rounded-lg px-1 w-[70px] ml-2" />
+                        <p>zł</p>
                     </div>
                 </div>
                 <div className="w-full">
