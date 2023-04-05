@@ -5,23 +5,29 @@ import {Slider,styled} from "@mui/material";
 
 const CustomSlider = styled(Slider)({
     width: '100%',
-    height: '20px',
+    height: '4px',
+    "--tw-bg-opacity": "1",
+    color:"rgb(209 213 219)",
     '& .MuiSlider-track': {
-      borderRadius: '999px',
+      borderRadius: '0.5re',
+      "--tw-bg-opacity": "1",
+      backgroundColor:"rgb(59 130 246)",
+      height:'4px',
     },
     
     '& .MuiSlider-thumb': {
-        width: "17px",
-        height: "17px",
+        width: "20px",
+        height: "20px",
         "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(59 130 246 / var(--tw-bg-opacity))",
+        backgroundColor: "white",
         borderRadius: "50%",
-        border: "none",
+        border: "2px solid rgb(59 130 246)",
         cursor: "pointer",
         pointerEvents: "auto",
         "-webkit-appearance": "none",
-      '&:focus, &:hover': {
+      '&:focus, &:hover,&:active': {
         boxShadow: 'inherit',
+        backgroundColor:'rgb(59 130 246)'
       },
     },
   });
@@ -68,10 +74,10 @@ const handleFilterClick = () => {
             </div>
             <div className="px-6 w-full">
                 <div className="mt-4">
-                    <h1 className="font-semibold text-xl">Przedział cenowy</h1>
+                    <h1 className=" text-lg">Przedział cenowy</h1>
                     {/* <p className=" text-sm">Użyj suwaka lub wpisz minimalną i maksymalną cenę</p> */}
                 </div>
-                <div className="flex my-3">
+                <div className="flex my-3 justify-center">
                     <div className="flex items-center">
                         <p>Min</p>
                         <input type="Number" value={ranges[0]} onChange={handleRangeMinInputField}
