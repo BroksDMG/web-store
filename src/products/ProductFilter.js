@@ -9,10 +9,11 @@ const CustomSlider = styled(Slider)({
     "--tw-bg-opacity": "1",
     color:"rgb(209 213 219)",
     '& .MuiSlider-track': {
-      borderRadius: '0.5re',
+      borderRadius: '0.5rem',
       "--tw-bg-opacity": "1",
       backgroundColor:"rgb(59 130 246)",
       height:'4px',
+      border:"rgb(59 130 246)",
     },
     
     '& .MuiSlider-thumb': {
@@ -21,7 +22,7 @@ const CustomSlider = styled(Slider)({
         "--tw-bg-opacity": "1",
         backgroundColor: "white",
         borderRadius: "50%",
-        border: "2px solid rgb(59 130 246)",
+        border: "1px solid rgb(59 130 246)",
         cursor: "pointer",
         pointerEvents: "auto",
         "-webkit-appearance": "none",
@@ -56,13 +57,16 @@ const handleFilterClick = () => {
           clicked ? "translate-x-20 " : "-translate-x-full duration-0"
         }`}
       >
-        <button
-          onClick={handleFilterClick}
-          className={`ease-in duration-300 text-4xl text-gray-300`}
-        >
-          <FaTimes />
-        </button>
-        <div className="flex flex-col  items-start cursor-pointer ">
+        
+        <div className="flex flex-col  items-start cursor-pointer">
+            <div className="w-full flex justify-end mt-5">
+                <button
+                onClick={handleFilterClick}
+                className={`ease-in duration-300 text-4xl text-gray-300 px-4  flex items-end`}
+                >
+                <FaTimes />
+                </button>
+            </div>
             <div className="w-full hover:bg-gray-300 px-4">
                 <button className="border-b w-full h-14 flex items-center justify-start rounded-sm p-2 hover:border-none  hover:font-bold  ">Najniższa Cena</button>
             </div>
@@ -74,7 +78,7 @@ const handleFilterClick = () => {
             </div>
             <div className="px-6 w-full">
                 <div className="mt-4">
-                    <h1 className=" text-lg">Przedział cenowy</h1>
+                    <span className=" text-base">Przedział cenowy</span>
                     {/* <p className=" text-sm">Użyj suwaka lub wpisz minimalną i maksymalną cenę</p> */}
                 </div>
                 <div className="flex my-3 justify-center">
