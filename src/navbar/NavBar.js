@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import DropDownMenu from "./DropDownMenu";
-import { FaShoppingBasket ,FaHeart,FaBars} from "react-icons/fa";
+import { FaShoppingBasket ,FaHeart} from "react-icons/fa";
 function NavBar() {
   return (
     <div className="w-screen border flex flex-col items-center h-32 justify-around ">
