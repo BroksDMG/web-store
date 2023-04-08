@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import {Slider,styled} from "@mui/material";
+import ProductData from "./ProductData";
 
 const CustomSlider = styled(Slider)({
     width: '100%',
@@ -33,16 +34,36 @@ const CustomSlider = styled(Slider)({
     },
   });
 
-function ProductFilter() {
-const [clicked, setClicked] = useState(false);
-const[ranges, setRanges]=useState([3060,7000]);
-const handleFilterClick = () => {
-    setClicked(!clicked);
-  };
+function ProductFilter(props) {
+    const [clicked, setClicked] = useState(false);
+    const[ranges, setRanges]=useState([3060,7000]);
+    const [cards,setCards]=useState(ProductData)
+    const handleFilterClick = () => {
+        setClicked(!clicked);
+    };
     const handleRangeInput=(e,data)=>setRanges(data)
     const handleRangeMinInputField=(e)=>setRanges([e.target.value,ranges[1]])
     const handleRangeMaxInputField=(e)=>setRanges([ranges[0],e.target.value]);
-    
+    const filterHandler= (filterType)=>{
+        let filterData =[...cards]
+        switch (filterType) {
+            case 'lowestPrice':
+                filterData.sort((a,b)=>a.price-b.price)
+                break;
+            case 'biggestPrice':
+                    filterData.sort((a,b)=>b.price-a.price)
+                    break;  
+            // case 'BiggestDiscount':
+            //         filterData.sort((a,b)=>a.price+b.price)
+            //         break;         
+            default:
+                filterData=ProductData
+                break;
+            }
+        setCards(filterData)
+        props.onSaveFilterData(cards)
+    }   
+
   return (
     <div className="mx-2 flex ">
       <button
@@ -68,10 +89,12 @@ const handleFilterClick = () => {
                 </button>
             </div>
             <div className="w-full hover:bg-gray-300 px-4">
-                <button className="border-b w-full h-14 flex items-center justify-start rounded-sm p-2 hover:border-none  hover:font-bold  ">Najniższa Cena</button>
+                <button onClick={()=>filterHandler('lowestPrice')}
+                className="border-b w-full h-14 flex items-center justify-start rounded-sm p-2 hover:border-none  hover:font-bold  ">Najniższa Cena</button>
             </div>
             <div className="w-full hover:bg-gray-300 px-4">
-            <button className="border-b w-full h-14 flex items-center justify-start rounded-sm p-2 hover:border-none  hover:font-bold  ">Najwyższa Cena</button>
+            <button onClick={()=>filterHandler('biggestPrice')}
+            className="border-b w-full h-14 flex items-center justify-start rounded-sm p-2 hover:border-none  hover:font-bold  ">Najwyższa Cena</button>
             </div>
             <div className="w-full hover:bg-gray-300 px-4">
             <button className="border-b w-full h-14 flex items-center justify-start rounded-sm p-2 hover:border-none  hover:font-bold  ">Największy rabat</button>
