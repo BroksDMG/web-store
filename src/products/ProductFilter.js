@@ -62,6 +62,8 @@ function ProductFilter(props) {
             }
         setCards(filterData)
         props.onSaveFilterData(cards)
+
+        ///TODO: slider fliter/////
     }   
 
   return (
