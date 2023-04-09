@@ -3,7 +3,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 function ProductCard(props) {
   const description = props.items.description
   const updateDescription =description.length>=50?description.slice(0,50)+"...":description
-
+  
   return (
     <div className="min-w-[9rem] max-w-[144px] w rounded-lg  shadow-lg m-2 border cursor-pointer">
       <div className="bg-white p-3 rounded-xl">

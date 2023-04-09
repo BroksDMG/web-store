@@ -1,5 +1,6 @@
 
-const getId=()=>Math.floor(Math.random(0,1)*10000000000);
+    let num=0
+    const getId=()=>num+=1;
 
 
 const ProductData=[
@@ -69,5 +70,4 @@ const ProductData=[
 
     },
     ]
-
 export default ProductData

@@ -16,11 +16,11 @@ function ProductsContainer() {
         <div className='flex flex-wrap justify-center'>
             {products.map((product)=>{
                 return(
-                    // <div key={product.id}>
+                    <div key={product.id}>
                         <Link to={`/products/${product.id}`}>
-                            <ProductCard items={product} key={product.id} ></ProductCard>
+                            <ProductCard items={product}  ></ProductCard>
                         </Link>
-                    // </div>
+                    </div>
                 )
             })}
         </div>
