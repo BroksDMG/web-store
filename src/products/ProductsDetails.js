@@ -2,11 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import ProductData from "./ProductData";
 import NavBar from '../navbar/NavBar'
+import { Link } from 'react-router-dom'
 import {
   FaShoppingBasket,
   FaHeart,
   FaCaretRight,
   FaCaretLeft,
+  FaArrowLeft
 } from "react-icons/fa";
 import { useState } from "react";
 
@@ -53,8 +55,13 @@ function ProductsDetails() {
     <NavBar></NavBar>
     <div className="max-w-[1440px]  h-screen flex flex-col">
       <div className="bg-white p-3">
+        <button className="z-40 cursor-pointer text-3xl relative left-7 top-7">
+        <Link to={`/`}>
+        <FaArrowLeft  className=" text-gray-400 "/>
+        </Link>
+        </button>
         <img
-          className="rounded-t-lg w-screen h-50"
+          className="rounded-t-lg w-screen h-50 z-30"
           src={product.img}
           alt="product"
         />
@@ -96,7 +103,7 @@ function ProductsDetails() {
           </div>
         </div>
 
-        <div className="my-2 mb-4">
+        <div className="my-4 ">
           <ul className="flex flex-gap gap-2 text-sm overflow-hidden">
             <li
               onClick={() => onClickBtnsHandler("opis")}

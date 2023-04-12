@@ -2,12 +2,15 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import DropDownMenu from "./DropDownMenu";
 import { FaShoppingBasket ,FaHeart} from "react-icons/fa";
+import { Link } from 'react-router-dom'
 function NavBar() {
   return (
     <div className="w-screen border flex flex-col items-center h-32 justify-around ">
       <div className="flex items-center justify-between w-full h-full">
         <div>
+        <Link to={`/`}>
           <h1 className="mx-4">STORE</h1>
+        </Link>
         </div>
         <div className="flex items-center ">
           <FaHeart className="text-lg"/>
