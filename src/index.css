@@ -1,7 +1,29 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Roboto:ital,wght@0,300;1,100;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Roboto:ital,wght@0,300;1,100;1,300;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"] {
+    @apply  focus:ring-0 appearance-none focus:outline-none 
+} 
 
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select ,
+  [type="checkbox"],
+  [type="radio"] {
+   @apply focus:ring-0 appearance-none
+  }
+}
 
