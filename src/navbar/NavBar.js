@@ -9,7 +9,7 @@ function NavBar() {
         <div>
           <h1 className="mx-4">STORE</h1>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <FaHeart className="text-lg"/>
           <FaShoppingBasket className="text-gray-300 text-2xl sm:  mx-7" />
             <img
