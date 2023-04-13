@@ -13,7 +13,9 @@ function NavBar() {
         </Link>
         </div>
         <div className="flex items-center ">
+          <Link to={`/favorites`}>
           <FaHeart className="text-lg"/>
+          </Link>
           <FaShoppingBasket className="text-gray-300 text-2xl sm:  mx-7" />
             <img
               className="w-6 mr-4"

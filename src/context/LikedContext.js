@@ -1,5 +1,5 @@
 import React,{createContext,useState} from "react";
-const LikedContext=createContext([])
+export const LikedContext=createContext([])
 export const LikedProvider=({children})=>{
     const [liked,setLiked] =useState([])
   return (

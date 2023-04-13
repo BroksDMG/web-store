@@ -1,4 +1,5 @@
-import React from "react";
+import React ,{useContext,useState}from "react";
+import { LikedContext } from "../context/LikedContext";
 import { useParams } from "react-router-dom";
 import ProductData from "./ProductData";
 import NavBar from '../navbar/NavBar'
@@ -10,11 +11,10 @@ import {
   FaCaretLeft,
   FaArrowLeft
 } from "react-icons/fa";
-import { useState } from "react";
 
 function ProductsDetails() {
   const [inputValue, setInputValue] = useState(1);
- 
+  const [liked,setLiked]=useContext(LikedContext)
   const { id } = useParams();
   const getProduct = () =>
     ProductData.find((product) => product.id.toString() === id);
