@@ -1,5 +1,5 @@
-import React ,{useContext,useState}from "react";
-import { LikedContext } from "../context/LikedContext";
+import React ,{useState}from "react";
+// import { LikedContext } from "../context/LikedContext";
 import { useParams } from "react-router-dom";
 import ProductData from "./ProductData";
 import NavBar from '../navbar/NavBar'
@@ -14,7 +14,7 @@ import {
 
 function ProductsDetails() {
   const [inputValue, setInputValue] = useState(1);
-  const [liked,setLiked]=useContext(LikedContext)
+  // const [liked,setLiked]=useContext(LikedContext)
   const { id } = useParams();
   const getProduct = () =>
     ProductData.find((product) => product.id.toString() === id);
