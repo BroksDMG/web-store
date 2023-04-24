@@ -17,11 +17,15 @@ function NavBar() {
           <FaHeart className="text-lg"/>
           </Link>
           <FaShoppingBasket className="text-gray-300 text-2xl sm:  mx-7" />
+            <div>
+            <Link to={`/login`}>
             <img
               className="w-6 mr-4"
               src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
               alt="ProfileImage"
             />
+            </Link>
+            </div>
         </div>
       </div>
       <div className=" w-full  border-b">

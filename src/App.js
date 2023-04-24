@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}/>
         <Route path="/favorites" element={<FavoritesList/>}/>
+        <Route path="/login" element={<FavoritesList/>}/>
         <Route path="/products/:id" element={<ProductsDetails/>}/>
       </Routes>
     </LikedProvider>
